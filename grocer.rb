@@ -84,9 +84,10 @@ def checkout(cart, coupons)
   new_cart = apply_coupons(consolidated, coupons)
   updated = apply_clearance(new_cart)
 
-  next_updated = updated.reduce(0) do |memo, (key, value)|
+  next_updated = 
+  updated.reduce(0) do |memo, (key, value)|
     memo += (value[:price] * value[:count])
-   
+  end   
 
   if next_updated > 100 
     next_updated -= (next_updated * 0.10)
