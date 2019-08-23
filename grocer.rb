@@ -36,38 +36,6 @@ def apply_coupons(cart, coupons)
     p cart
 end
 
-#   new_cart ={}
-#   if coupons.size != 0
-#     cart.keys.each do |out_keys| #["AVOCADO", "KALE"], cart.keys.each iterates through  elements of that new array, with |out_keys| representing elements
-#       coupons.each do |coupon| 
-#         #puts out_keys == coupon[:item]
-#         if out_keys == coupon[:item] # if avocado == avocado,
-#           apply_amt = cart[out_keys][:count] / coupon[:num]
-  
-#           remainder = cart[out_keys][:count] % coupon[:num]  
-      
-#           new_cart[out_keys] = {:price => cart[out_keys][:price], :clearance => cart[out_keys][:clearance], :count => remainder}
-      
-          
-#           single_coup_cost = (coupon[:cost])/(coupon[:num])
-        
-#           new_cart["#{out_keys} W/COUPON"] =  {:price => single_coup_cost, :clearance => cart[out_keys][:clearance] , :count => coupon[:num]*(coupons.count(coupon)) }
-#           cart[out_keys][:count] -= (apply_amt*(coupon[:num]))
-
-#         else out_keys != coupon[:item] 
-#           new_cart[out_keys] = cart[out_keys] #this creates a new key in the new_cart
-
-
-          
-          
-#         end
-#       end
-#     end
-#   else 
-#     new_cart = cart
-#   end   
-# new_cart
-# end 
 
 
 
