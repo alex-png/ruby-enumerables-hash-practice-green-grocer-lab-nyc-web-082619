@@ -1,24 +1,19 @@
 require 'pry'
 def consolidate_cart(cart)
-  
-new_cart = {} 
-
-
+  new_cart = {} 
   cart.each do |hash|
 #   print cart[hash]
 # end
-  
-  if new_cart.keys.include?(hash.keys[0]) #index is 0 because #.keys returns an array, ['Avocado'][0] => 'Avocado'
+    if new_cart.keys.include?(hash.keys[0]) #index is 0 because #.keys returns an array, ['Avocado'][0] => 'Avocado'
 
     new_cart[hash.keys[0]][:count] +=1
-  else 
-    new_cart[hash.keys[0]] = hash[hash.keys[0]] #this adds price and clearence to new_cart
-    new_cart[hash.keys[0]][:count] = 1 #this creates a new key called count in the new_cart and sets the value as 1
+    else 
+      new_cart[hash.keys[0]] = hash[hash.keys[0]] #this adds price and clearence to new_cart
+      new_cart[hash.keys[0]][:count] = 1 #this creates a new key called count in the new_cart and sets the value as 1
+    end
   end
-end
 
-return new_cart
-
+  return new_cart
 end
 
 
