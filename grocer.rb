@@ -14,12 +14,12 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
-    if cart.keys.include? coupon[:item]
-      if cart[coupon[:item]][:count] >= coupon[:num]
+    if cart.keys.include? coupon[:item] #if AVOCADO appears
+      if cart[coupon[:item]][:count] >= coupon[:num] #minimum amount for it to apply
         new_name = "#{coupon[:item]} W/COUPON"
-        if cart[new_name]
+        if cart[new_name] #if it exists, add this
           cart[new_name][:count] += coupon[:num]
-        else
+        else #else create it with that data
           cart[new_name] = {
             count: coupon[:num],
             price: coupon[:cost]/coupon[:num],
@@ -32,41 +32,6 @@ def apply_coupons(cart, coupons)
   end
   cart
 end
-
-#   new_cart ={}
-#   if coupons.size != 0
-#     cart.keys.each do |out_keys| #["AVOCADO", "KALE"], cart.keys.each iterates through  elements of that new array, with |out_keys| representing elements
-#       coupons.each do |coupon| 
-#         #puts out_keys == coupon[:item]
-#         if out_keys == coupon[:item] # if avocado == avocado,
-#           apply_amt = cart[out_keys][:count] / coupon[:num]
-  
-#           remainder = cart[out_keys][:count] % coupon[:num]  
-      
-#           new_cart[out_keys] = {:price => cart[out_keys][:price], :clearance => cart[out_keys][:clearance], :count => remainder}
-      
-          
-#           single_coup_cost = (coupon[:cost])/(coupon[:num])
-        
-#           new_cart["#{out_keys} W/COUPON"] =  {:price => single_coup_cost, :clearance => cart[out_keys][:clearance] , :count => coupon[:num]*(coupons.count(coupon)) }
-#           cart[out_keys][:count] -= (apply_amt*(coupon[:num]))
-
-#         else out_keys != coupon[:item] 
-#           new_cart[out_keys] = cart[out_keys] #this creates a new key in the new_cart
-
-
-          
-          
-#         end
-#       end
-#     end
-#   else 
-#     new_cart = cart
-#   end   
-# new_cart
-# end 
-
-
 
 def apply_clearance(cart)
   cart.keys.each do |keys|
