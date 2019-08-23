@@ -2,8 +2,6 @@ require 'pry'
 def consolidate_cart(cart)
   new_cart = {} 
   cart.each do |hash|
-#   print cart[hash]
-# end
     if new_cart.keys.include?(hash.keys[0]) #index is 0 because #.keys returns an array, ['Avocado'][0] => 'Avocado'
 
     new_cart[hash.keys[0]][:count] +=1
